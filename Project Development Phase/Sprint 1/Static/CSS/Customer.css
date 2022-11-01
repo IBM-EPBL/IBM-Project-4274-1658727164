@@ -1,0 +1,76 @@
+@import url('http://fonts.cdnfonts.com/css/alegreya-sans-medium');
+.aleg-font{
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 100;
+}
+.aleg-font-700{
+    font-weight: 700;
+}
+.aleg-p{
+    font-style: normal;
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+}
+.bg-cover{
+    background-color: #63DEE5;
+    position: relative;
+    left: -78px;
+    width: fit-content !important;
+    border-radius: 25px;
+    color: #fff;
+    align-self: center;
+}
+.form-bg{
+    background: rgba(254, 254, 254, 0.74) !important;
+}
+.form-right a, .form-bg a{
+    font-size: large;
+    color: #26A1A9;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: none;
+}
+.form-bg a{
+    margin-top: 10px;
+}
+.form-input{
+    border-radius: 30px;
+    background-color: #63DEE5;
+    color: #fff;
+}
+.form-floating label{
+    color: #fff;
+}
+input.form-control:focus{
+    color: #fff;
+    background-color: #63DEE5;
+}
+div.form-floating>.form-control:focus~label{
+    opacity: 1;
+}
+.w-80{
+    width: 80% !important;
+    max-width: 85% !important;
+}
+.h-80{
+    height: 80% !important;
+    max-height: 80% !important;
+}
+div.form-left{
+    border-radius: 40px 0 0 40px;
+    margin-right: .5%;
+    width: 70% !important;
+    max-width: 70% !important;
+}
+div.form-right{
+    width: 30%;
+    max-width: 30% !important;
+    border-radius: 0 40px 40px 0;
+    margin-left: .5%;
+}
+
+.form-floating label{
+    margin-left: 10px;
+}

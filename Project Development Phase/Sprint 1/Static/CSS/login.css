@@ -1,0 +1,12 @@
+.welcome::before {
+	content: 'Welcome Back !';
+	width: fit-content;
+	height: fit-content;
+	background-color: #63DEE5;
+    color: #fff;
+	padding: 5% 10%;
+	position: absolute;
+	left: -10px;
+	border-radius: 30px;
+	top: 10px;
+}

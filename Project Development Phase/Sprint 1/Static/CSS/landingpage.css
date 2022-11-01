@@ -1,0 +1,144 @@
+@import url('http://fonts.cdnfonts.com/css/noticia-text');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: notica-text;
+}
+html, body, div, span, applet, object, iframe, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+body{
+    background: #63DEE5;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.nav-head .navbar-collapse{
+    flex-basis: none !important;
+    flex-grow: unset !important;
+}
+.btn.reg-log{
+    padding: 5px 18px;
+    border-radius: 30px;
+    margin-right: 10px;
+    background: #40B4C6;
+    border: none;
+}
+.grid-center{
+    display: grid;
+    place-items: center;
+}
+.cookies{
+    background-color: rgba(62, 47, 47, 0.281);
+    height: 50px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: linear 1s popup;
+}
+.fade-in-up{
+    position: relative;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 5s;
+}
+@keyframes popup{
+    0%{
+        bottom: -10vh;
+    }
+    100%{
+        bottom: 0vh;
+    }
+}
+@keyframes run {
+    0% {
+        top: -10%;
+      }
+    50% {
+        top: 5%;
+    }
+    100% {
+        top: -10%;    
+    }
+}
+.cookies button{
+    margin: 0 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(224, 219, 227, 0.618);
+    outline: none;
+    border: 1px solid black;
+}
+.cookies a{
+    color: rgb(48, 133, 243);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.ai_chatBot{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url("/static/Images/customer_service.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
