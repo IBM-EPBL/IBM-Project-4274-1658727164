@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Customer Care Registry</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/landingPage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/customer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<section class="w-100" style="height: 90% !important;display: grid;place-items: center;">
+    <div class="container-fluid row justify-content-center aleg-font text-white">
+        <div class="w-50 col col-sm-6 justify-content-center text-center">
+            <h2 class="aleg-font-700 mt-5">A platform made to assisst customer’s!</h2>
+            <p class="mt-5 aleg-p">A complete suite of communication tools <br> for getting the best solutions from different <br> companies based on the queries customer rise </p>
+            <button role="application" class="btn btn-primary reg-log mt-5" style="padding: 10px 10px;font-size: x-large;">Click Me</button>
+            <h3 class="mt-5">To fire away your queries</h3>
+        </div>
+        <div class="w-50 col col-sm-6 justify-content-center">
+            <img src="/static/Images/customer.png" alt="customer page" style="width: 50vw;height: 50vh;max-width: 782px;max-height: 550px;">
+        </div>
+    </div>
+</section>
+<div class="ai_chatBot"></div>
+<footer>
+    <div class="cookies" style="display: none">
+        <p>This site uses cookies. <a href="https://www.google.com">Learn more</a> about how and why. <a href="https://zoho.com">Manage Settings</a> </p>
+        <button role="accept">OK</button>
+        <span class="cancelCookie" style="text-align: right; cursor: pointer;">X</span>
+    </div>
+</footer>
+<script src="{{ url_for('static', filename='JS/landingPage.js') }}"></script>
+<script src="{{ url_for('static', filename='JS/Customer.js') }}"></script>
+{% endblock %}

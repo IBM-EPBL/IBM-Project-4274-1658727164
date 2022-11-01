@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Customer Care Registry</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/landingPage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="container-fluid row text-white w-100">
+    <div class="row text-center justify-content-center mt-lg-5 w-70">
+        <h1>Maintain Your Customer Services <div class="w-100"></div> 24/7</h1>
+        <img src="{{ url_for('static', filename='Images/24_7.png') }}" alt="27/7" style="width: 50vw;" class="fade-in-up">
+    </div>
+    <div class="row justify-content-center align-self-center w-30">
+        <img src="{{ url_for('static', filename='Images/building.png') }}" alt="Company_Building" style="width: 20vw; height: 40vh">
+        <h1 class="text-center">Company’s can<div class="w-100"></div>join us now</h1>
+        <p class="mt-2 w-75">100’s of company’s  join us tomaintain their customer careregistry’s for free of cost.</p>
+        <div class="mt-4 text-center"><button class="btn btn-primary reg-log">Company Registry</button> </div>
+        <h4 class="text-center mt-3">For a Hassle free experience</h4>
+    </div>
+</section>
+<footer>
+    <div class="cookies" style="display: none">
+        <p>This site uses cookies. <a href="https://www.google.com">Learn more</a> about how and why. <a href="https://zoho.com">Manage Settings</a> </p>
+        <button role="accept">OK</button>
+        <span class="cancelCookie" style="text-align: right; cursor: pointer;">X</span>
+    </div>
+</footer>
+<script src="{{ url_for('static', filename='JS/landingPage.js') }}"></script>
+{% endblock %}

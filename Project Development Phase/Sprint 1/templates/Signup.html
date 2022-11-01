@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Customer Care Registry</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/landingPage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/customer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="Error-Message">
+    <i class="fa-solid fa-circle-exclamation"></i>
+   <p>Oops! <span class="insertError"></span></p>
+</div>
+<div class="container-fluid" style="width: 100vw;height: 90vh;display: grid;align-content: center;">
+    <section class="container-fluid row m-auto w-80">
+            <div style="max-width: 572px; margin-right: 9%;" class="w-50 col justify-content-center form-bg rounded-5 position-relative">
+                <h3 class="mt-4" style="color: #26A1A9;padding-bottom: 8%;">Create new account .</h3>
+                <form class="row w-100 m-auto" name="signup" autocomplete="off" method="post" action="signup">
+                    <div class="form-floating mt-2 w-50">
+                        <input type="text" class="form-control form-input" id="floatingInput" placeholder="Name" name="name" required>
+                        <label for="floatingInput">Name</label>
+                    </div>
+                    <div class="form-floating mt-2 w-75">
+                        <input type="email" class="form-control form-input" placeholder="Email" name="email" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mt-2 w-50">
+                        <input type="number" class="form-control form-input" placeholder="number" name="number" required>
+                        <label for="floatingInput">Number</label>
+                    </div>
+                    <div class="pass row justify-content-center">
+                        <div class="form-floating mt-3 col">
+                            <input type="password" class="form-control form-input" id="floatingPassword" placeholder="password" name="password" onfocus="checkNumber()">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mt-3 col">
+                            <input type="password" class="form-control form-input" placeholder="confirm password" name="confirmPassword" oninput="checkPassword()">
+                            <label for="floatingPassword">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="password-match" style="transform: scale(0);">* Passwords Did Not Match</div>
+                    <div class="w-50 row justify-content-around" style="margin: 0 auto;">
+                        <button class="btn btn-primary reg-log mt-3 w-75" role="verifySignup" style="padding: 10px 15px;">Sign&nbsp;up</button>
+                    </div>
+                </form>
+                <div class="position-absolute start-50 top-50 w-100 spin-ab" hidden=""><div class="spinner-border text-primary" role="status"></div></div>
+                <div style="margin: 2rem 0 1.5rem 0;"><a href="../login">Already a member ? Login</a></div>
+            </div>
+            <div class="w-75 row" style="width: 55%; max-width: 55%; justify-content: center;">
+                <img src="/static/Images/signup-tran.gif" alt="LOGIN" style="width: 40vw; height: 55vh;">
+            </div>
+        </section>
+</div>
+<script src="{{ url_for('static', filename='JS/signup.js') }}"></script>
+{% endblock %}

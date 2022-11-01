@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/Chatting.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/landingPage.css') }}">
+<title>Customer Chatting</title>
+{% endblock %}
+
+{% block body %}
+<div class="username">
+    <h1>Welcome {{email}}</h1>
+</div>
+<div class="container-fluid w-100 h-80" id="messages">
+</div>
+<br>
+<input type="text" name="message" placeholder="message" id="message"><br>
+<button id="sendBtn">Send</button>
+<script src="{{ url_for('static', filename='JS/chat.js') }}"></script>
+
+{% endblock %}

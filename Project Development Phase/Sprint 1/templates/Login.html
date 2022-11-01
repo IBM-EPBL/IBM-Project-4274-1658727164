@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Customer Care Registry</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/landingPage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/customer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="Error-Message" style="height: fit-content; padding: 15px;">
+    <i class="fa-solid fa-circle-exclamation"></i>
+   <p>Oops! <span class="insertError"></span></p>
+</div>
+<section class="container-fluid mt-5 d-grid" style="color: #26A1A9;">
+    <div class="w-80 row justify-content-center">
+        <div class="col nav-head justify-content-center align-self-center form-left form-bg text-center">
+            <h4 class="mt-4" style="font-weight: 700;">FEEL FREE TO LOGIN!</h4>
+            <img src="/static/Images/login.png" alt="LOGIN" style="width: 35vw; height: 65vh;">
+        </div>
+        <div class="col justify-content-center form-right form-bg row welcome position-relative">
+            <h5 class="text-center mt-2 grid-center" style="margin-top: 2.5rem !important;">Login in CCR</h5>
+            <form class="row w-100" action="{{ url_for('login_data') }}" autocomplete="off" method="post">
+                <div class="form-floating mt-2">
+                    <input type="email" class="form-control form-input" id="floatingInput" placeholder="Email" name="email">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="password" class="form-control form-input" id="floatingPassword" placeholder="password" name="password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="w-50 row justify-content-around" style="margin: 0 auto;">
+                    <button class="btn btn-primary reg-log mt-3" role="verifyLogin">Login</button>
+                </div>
+            </form>
+            <a href="../signup" class="mt-3 text-center grid-center" style="height: fit-content;margin: 3.5rem 0 -2.5rem 0 !important;">Don't have an Account ?</a>
+            <a href="#" class="mt-2 mb-3 text-center grid-center" style="height: fit-content;margin-top: 1rem !important;margin-bottom: -1rem !important;">Forgot Password</a>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='JS/login.js') }}"></script>
+{% endblock %}
