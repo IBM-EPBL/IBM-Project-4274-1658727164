@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+        <div class="container ">
+            <h2>Hi, {{ user[0] }}</h2>
+            {% if user[3] == 0 %}
+                <p>
+                    As a customer of our sevice, you can raise a ticket to 
+                    bring you issue forward with a detailed description of
+                    the problem. 
+                    Your issues will be assigned to an agent who will take
+                    care of it.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <h3>File a Complaint</h3>
+                        <form method="POST" >
+                            {% if msg %}
+                                <div class="alert alert-success" role="alert">
+                                    {{ msg }}
+                                </div>
+                            {% endif %}
+                            <input name="title" class="form-control form-control-sm" type="text" placeholder="Ticket Header" aria-label=".form-control-sm example" />
+                            <br>
+                            <div class="mb-3">
+                                <textarea name="description" placeholder="Problem Description..." class="form-control" id="problem-desc" rows="3"></textarea>
+                            </div>
+                            <input type="submit" value="Raise" class="btn btn-warning" />
+                        </form>
+                    </div>
+                    <div class="col">
+                        <h3>List of Pending Complaints</h3>
+                        <table class="table">
+                            <thead class="table-dark">
+                            <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>View</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for ticket in tickets %}
+                                    <tr>
+                                        <td>{{ ticket[3] }}</td>
+                                        <td>{{ ticket[4] }}</td>
+                                        <td><a href="/ticket/{{ticket[0]}}"><button class="btn btn-primary">View</button></a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% elif user[3] == 2 %}
+                <div class="row">
+                    <a href="{{url_for('panel')}}"><button class="btn btn-primary">Go To Admin Panel</button></a>
+                </div>
+            {% elif user[3] == 1%}
+                <table class="table">
+                    <thead class="table-dark">
+                    <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                            <tr>
+                                <td>{{ ticket[3] }}</td>
+                                <td>{{ ticket[4] }}</td>
+                                <td><a href="/ticket/{{ticket[0]}}"><button class="btn btn-primary">View</button></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            <br>
+            <a href="{{url_for('logout')}}" ><button class="btn btn-outline-success">Logout</button></a>
+        </div>
+    {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    <form method="POST" class="register-form">
+        <h2 style="text-align: center;" >Register Account</h2>
+        <div class="container">
+            <div class="mb-3">
+                <label for="email-address" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="email-address" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="name" />
+            </div>
+            <div class="row g-2">
+                <div class="col-auto">
+                    <label for="password" class="visually-hidden">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Create Account</button>
+                </div>
+            </div>
+            <p>Already have an Account ? <a href="{{ url_for('login') }}">Login</a></p>
+        </div>
+    </form>
+    {% endblock %}

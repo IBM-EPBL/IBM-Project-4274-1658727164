@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Promote Agents</h3>
+                    <div class="container">
+                        <form method="POST">
+                            <select name="admin-candidate">
+                                {% for user in all_users %}
+                                    <option value="{{user[4]}}">{{user[0]}}</option>
+                                {% endfor %}
+                            </select>
+                            <input class="btn btn-danger btn-sm" type="submit" value="Make Agent"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Assign Tasks</h3>
+                    <div class="container">
+                        <table class="table">
+                            <thead class="table-dark">
+                            <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>View</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for ticket in tickets %}
+                                    <tr>
+                                        <td>{{ ticket[3] }}</td>
+                                        <td>{{ ticket[4] }}</td>
+                                        <td><a href="/ticket/{{ticket[0]}}"><button class="btn btn-primary">View</button></a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
