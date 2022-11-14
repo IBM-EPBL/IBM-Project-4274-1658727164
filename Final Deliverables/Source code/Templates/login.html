@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+        
+    <form method="POST" class="login-form">
+        <h2 style="text-align: center;" >Login</h2>
+        <div class="container">
+            {% if msg == "Incorrect Password"%}
+                <div class="alert alert-danger" role="alert">
+                    {{ msg }}
+                </div>
+            {% elif msg == "User does not exist" %}
+                <div class="alert alert-primary" role="alert">
+                    {{ msg }}
+                </div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="email-address" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="email-address" placeholder="name@example.com">
+            </div>
+            <div class="row g-2">
+                <div class="col-auto">
+                    <label for="password" class="visually-hidden">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Login</button>
+                </div>
+            </div>
+            <p>Do not have an account ? <a href="{{ url_for('register_account') }}">Sign Up</a></p>
+        </div>
+    </form>
+    {% endblock %}
